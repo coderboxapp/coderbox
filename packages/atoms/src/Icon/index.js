@@ -1,19 +1,28 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as s from './styles'
 
-const Component = ({ as = 'i', name, isInverted, ...props }) => {
-  const className = cx(`icon fa fa-${name}`, props.className)
-  const Element = s.Icon.withComponent(as)
+class Icon extends React.Component {
+  static displayName = 'Icon'
+  static defaultProps = {
+    size: 'normal',
+    inverted: false
+  }
 
-  return (
-    <Element {...props} isOutlined={!isInverted} isInverted={false} className={className} />
-  )
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    inverted: PropTypes.bool
+  }
+
+  render () {
+    const className = cx(`icon`, `fa fa-${this.props.name}`, this.props.className)
+    return (
+      <s.Icon {...this.props} className={className} />
+    )
+  }
 }
 
-Component.displayName = 'Icon'
-Component.defaultProps = {
-  size: 'normal'
-}
-
-export default Component
+export default Icon

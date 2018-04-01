@@ -12,7 +12,7 @@ const paths = {
   libModules: path.resolve(__dirname, 'node_modules')
 }
 
-let libraryName = 'coderbox-atoms'
+let libraryName = 'index'
 let plugins = [
   new webpack.NamedModulesPlugin(),
   new webpack.DefinePlugin({ 'process.env': { ENV: `'${env}'`, NODE_ENV: `'${env}'` } })

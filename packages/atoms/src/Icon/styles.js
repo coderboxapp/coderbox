@@ -1,27 +1,27 @@
 import styled, { css } from 'styled-components'
-import {
-  withSize,
-  withColor,
-  isCircular
-} from 'styled-utils'
+import { rgba } from 'polished'
+import { color, isSize, isInverted, isCircular } from '@coderbox/utils'
 
-const hasBorder = ({ hasBorder }) => {
-  if (!hasBorder) return
+const hasShadow = p => {
+  if (!p.shadow) return
   return css`
-    border: 1px solid transparent;
+    box-shadow: 0 0 0 0.18em ${rgba(color(p), 0.3)};
+    margin: 0.185em;
   `
 }
-export const Icon = styled.div`
-  display: inline-flex;
+
+export const Icon = styled.i`
+  display: inline-flex !important;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  width: 1.6em;
-  height: 1.6em;
+  width: ${p => p.theme.components.icon.width};
+  height: ${p => p.theme.components.icon.height};
   line-height: 1.5;
+  ${p => p.color && color(p)}
 
-  ${withSize}
-  ${withColor}
+  ${isSize}
+  ${isInverted}
   ${isCircular}
-  ${hasBorder}
+  ${hasShadow}
 `

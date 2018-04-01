@@ -12,15 +12,7 @@
   ],
   "plugins": [
     [ "styled-components" ],
-    [ "transform-object-rest-spread" ],
-    [
-      "module-resolver",
-      {
-        "root": [],
-        "alias": {
-          "atoms": "./src"
-        }
-      }
-    ]
+    [ "transform-class-properties" ],
+    [ "transform-object-rest-spread" ]
   ]
 }

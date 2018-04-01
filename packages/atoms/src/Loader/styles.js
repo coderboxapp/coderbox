@@ -1,9 +1,17 @@
-import styled, { keyframes } from 'styled-components'
-import { withColor, withSize } from 'styled-utils'
+import styled, { css, keyframes } from 'styled-components'
+import { size, color, textOnColor, px } from '@coderbox/utils'
 
 const rotate360 = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(359deg); }
+`
+
+export const Loader = styled.div`
+  display: inline-flex;
+  align-items: center;
+  
+  ${p => p.vertical && css`flex-direction: column;`}
+  ${p => p.inverted && css`color: ${p => textOnColor(color(p))}`}
 `
 
 export const LoaderContainer = styled.div`
@@ -12,11 +20,15 @@ export const LoaderContainer = styled.div`
   height: ${p => p.theme.components.loader.size};
   margin: ${p => p.theme.components.loader.margin};
   padding: ${p => p.theme.components.loader.borderSize};
+  font-size: ${p => px(size(p))};
 
-  ${withSize}
+  &:not(:last-child) {
+    ${p => p.vertical && css`margin-bottom: 0.5em;`}
+    ${p => !p.vertical && css`margin-right: 0.5em;`}
+  }
 `
 
-export const Loader = styled.div`
+export const LoaderCircle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -31,10 +43,12 @@ export const Loader = styled.div`
   width: ${p => p.theme.components.loader.size};
   height: ${p => p.theme.components.loader.size};
   margin: ${p => p.theme.components.loader.margin};
-  background-color: transparent !important;
+  background-color: transparent;
 
-  ${withColor}
-  ${withSize}
+  font-size: ${p => px(size(p))};
+  color: ${p => color(p)};
+
+  ${p => p.inverted && css`color: ${textOnColor(color(p))}`}
 `
 
 export const LoaderShadow = styled.div`
@@ -50,5 +64,5 @@ export const LoaderShadow = styled.div`
   margin: ${p => p.theme.components.loader.margin};
   border-color: rgba(0, 0, 0, 0.4);
 
-  ${withSize}
+  font-size: ${p => px(size(p))};
 `

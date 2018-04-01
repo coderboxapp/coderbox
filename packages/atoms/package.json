@@ -1,16 +1,18 @@
 {
   "name": "@coderbox/atoms",
   "version": "1.0.55",
-  "description": "React Components used at @Coderbox",
-  "main": "lib/coderbox-atoms.js",
+  "description": "Core react components.",
+  "main": "lib/index.js",
   "scripts": {
+    "del": "del",
     "prepare": "npm build",
+    "clean": "del lib",
     "build": "webpack --env production",
     "outdated": "npm outdated"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderboxapp/coderbox-atoms.git"
+    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/atoms"
   },
   "keywords": [
     "react",
@@ -19,14 +21,14 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "react": "16.x",
+    "react-dom": "16.x",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",
     "recompose": "^0.25.0",
     "styled-components": "^2.1.2",
-    "styled-utils": "^1.2.4"
-  },
-  "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x"
+    "styled-utils": "^1.2.4",
+    "@coderbox/utils": "^1.0.0",
+    "@coderbox/themes": "^1.0.0"
   }
 }

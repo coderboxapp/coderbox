@@ -1,0 +1,28 @@
+{
+  "name": "@coderbox/utils",
+  "version": "1.0.0",
+  "description": "Utilities used by coderbox components.",
+  "main": "lib/index.js",
+  "scripts": {
+    "del": "del",
+    "prepare": "npm build",
+    "clean": "del lib",
+    "build": "babel src --out-dir lib",
+    "outdated": "npm outdated"
+  },
+  "keywords": [
+    "styled-components",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/utils"
+  },
+  "author": "Ghiura Alexandru",
+  "license": "ISC",
+  "dependencies": {
+    "styled-components": "^2.1.2",
+    "lodash": "^4.17.4",
+    "polished": "^1.3.0"
+  }
+}

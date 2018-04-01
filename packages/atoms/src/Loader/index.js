@@ -1,24 +1,32 @@
 import React from 'react'
-import { mapProps } from 'recompose'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as s from './styles'
 
-const Component = (props) => {
-  const className = cx(`loader`, props.className)
-  return (
-    <s.LoaderContainer {...props}>
-      <s.LoaderShadow {...props} />
-      <s.Loader {...props} className={className} />
-    </s.LoaderContainer>
-  )
+class Loader extends React.Component {
+  static displayName = 'Loader'
+  static defaultProps = {
+    size: 'normal'
+  }
+  static propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.string,
+    inverted: PropTypes.bool
+  }
+
+  render () {
+    const className = cx(`loader`, this.props.className)
+    const { children, ...props } = this.props
+    return (
+      <s.Loader {...props} className={className}>
+        <s.LoaderContainer {...props} >
+          <s.LoaderShadow {...props} />
+          <s.LoaderCircle {...props} />
+        </s.LoaderContainer>
+        {children && <div>{children}</div>}
+      </s.Loader>
+    )
+  }
 }
 
-Component.defaultProps = {
-  tone: 0
-}
-
-Component.displayName = 'Loader'
-export default mapProps(props => ({
-  ...props,
-  isInverted: !props.isInverted
-}))(Component)
+export default Loader
