@@ -1,0 +1,76 @@
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withTheme } from '../utils'
+import { Button, Tag, Box, Icon, Group } from '../index'
+
+let stories = storiesOf('atoms/Group', module)
+
+stories.add('group buttons', withTheme(() => {
+  return (
+    <div>
+      <Box>
+        <Group>
+          <Button color='primary' isOutlined>
+            <Icon name='star' />
+            Primary
+            </Button>
+          <Button color='primary' isOutlined>Success</Button>
+          <Button color='primary' isOutlined>Danger</Button>
+        </Group>
+      </Box>
+      <Box>
+        <Group size='small' hasTextAlign='left'>
+          <Button color='primary'>Primary</Button>
+          <Button color='primary'>Success</Button>
+          <Button color='primary'>Danger</Button>
+        </Group>
+      </Box>
+      <Box>
+        <Group isVertical>
+          <Button color='success'>Primary</Button>
+          <Button color='gray'>Up</Button>
+          <Button color='gray'>Down</Button>
+          <Button color='success'>Danger</Button>
+        </Group>
+      </Box>
+      <Box>
+        <Group>
+          <Button color='success'>Primary</Button>
+          <Button color='success' tone={1} isStatic isIcon>
+            <Icon name='star' />
+          </Button>
+        </Group>
+      </Box>
+      <Box>
+        <Group>
+          <Button color='success'>Primary</Button>
+        </Group>
+      </Box>
+    </div>
+  )
+}))
+
+stories.add('group tags', withTheme(() => {
+  return (
+    <div>
+      <Box hSpace='0.5rem'>
+        <Group>
+          <Tag color='gray' tone={1}>npm</Tag>
+          <Tag color='primary'>v0.5.0</Tag>
+        </Group>
+        <Group>
+          <Tag color='gray' tone={1}>build</Tag>
+          <Tag color='success'>passing</Tag>
+        </Group>
+        <Group>
+          <Tag color='success'>javascript</Tag>
+          <Tag color='success' tone={1} isDelete />
+        </Group>
+        <Group>
+          <Tag color='success' isIcon tone={1}><Icon name='star' /></Tag>
+          <Tag color='success'>passing</Tag>
+        </Group>
+      </Box>
+    </div>
+  )
+}))

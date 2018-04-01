@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [ "last 2 versions" ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [ "styled-components" ],
+    [ "transform-object-rest-spread" ],
+    [
+      "module-resolver",
+      {
+        "root": [],
+        "alias": {
+          "atoms": "./src"
+        }
+      }
+    ]
+  ]
+}
