@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/atoms",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Core react components.",
   "main": "lib/index.js",
   "scripts": {
@@ -21,8 +21,8 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@coderbox/themes": "^1.0.1",
-    "@coderbox/utils": "^1.0.1",
+    "@coderbox/themes": "^2.0.3",
+    "@coderbox/utils": "^2.0.3",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
     "react": "16.x",
