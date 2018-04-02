@@ -22,6 +22,7 @@
   "dependencies": {
     "@coderbox/themes": "^2.0.5",
     "@coderbox/utils": "^2.0.5",
+    "@coderbox/hocs": "^2.0.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
     "react": "16.x",

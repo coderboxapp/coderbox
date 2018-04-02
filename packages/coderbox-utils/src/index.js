@@ -1,7 +1,6 @@
 
-import React from 'react'
 import { parseToHsl, darken, lighten } from 'polished'
-import { css, ThemeProvider } from 'styled-components'
+import { css } from 'styled-components'
 
 export const color = (p, d) => {
   if (!p.color) return d
@@ -45,10 +44,6 @@ export const px = (value) => {
 
 export const em = (value) => {
   return withUnit(value, 'em')
-}
-
-export const withTheme = (theme, Component) => {
-  return () => <ThemeProvider theme={theme}><Component /></ThemeProvider>
 }
 
 export const isFluid = p => {

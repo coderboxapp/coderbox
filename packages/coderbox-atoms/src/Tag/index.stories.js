@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import { withTheme } from '@coderbox/utils'
+import { withTheme } from '@coderbox/hocs'
 import * as themes from '@coderbox/themes'
 import * as docs from './docs'
 import { Tag, Box, Group } from '../index'
