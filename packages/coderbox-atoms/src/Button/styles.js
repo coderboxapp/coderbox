@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {
   isColor,
+  isHover,
   isFluid,
   isOutlined,
   isInverted,
@@ -10,14 +11,15 @@ import {
   px
 } from '@coderbox/utils'
 
-export const Button = styled.div`
-  height: ${p => p.theme.components.button.height};
-  padding: ${p => p.theme.components.button.padding};
-  border: ${p => p.theme.components.button.border};
-  border-color: ${p => p.theme.components.button.borderColor};
-  border-radius: ${p => px(p.theme.components.button.borderRadius)};
-  color: ${p => p.theme.components.button.color};
-  background: ${p => p.theme.components.button.background};
+export const Button = styled.div.attrs({
+  button: p => ({...p.theme.components.button})
+})`
+  height: ${p => p.button.height};
+  padding: ${p => p.button.padding};
+  border: ${p => p.button.border};
+  border-radius: ${p => px(p.button.borderRadius)};
+  color: ${p => p.button.color};
+  background: ${p => p.button.background};
   font-family: ${p => p.theme.fonts.primary};
   font-weight: 400;
   display: inline-flex;
@@ -32,12 +34,13 @@ export const Button = styled.div`
   text-decoration: none;
 
   &:hover {
-    background: ${p => p.theme.components.button.hoverBackground};
+    background: ${p => p.button.hoverBackground};
   }
 
   ${isSize}
   ${isFluid}
   ${isColor}
+  ${isHover}
   ${isOutlined}
   ${isInverted}
   ${isLoading}

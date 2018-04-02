@@ -1,41 +1,54 @@
 import styled from 'styled-components'
+import { px } from '@coderbox/utils'
 
-const radius = p => p.theme.sizes.radius
+const radius = p => px(p.theme.components.group.borderRadius)
 
-export const HGroup = styled.div`
+const Group = styled.div`
   display: inline-flex;
   box-sizing: border-box;
-  flex-direction: row;
+  width: 100%;
+
   & > * {
-    margin: 0 -1px 0 0 !important;
+    margin: 0 0px 0 0 !important;
   }
+
   & > *:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
-  & > *:first-child:not(:last-child) {
-    border-radius: ${radius} 0 0 ${radius};
-  }
-  & > *:last-child:not(:first-child) {
-    border-radius: 0 ${radius} ${radius} 0;
-    margin-right: 0 !important;
+
+  &:not(:last-child) {
+    margin-right: 0.5em;
   }
 `
 
-export const VGroup = styled.div`
-  display: inline-flex;
-  box-sizing: border-box;
+export const HGroup = Group.extend`
+  flex-direction: row;
+
+  & > *:first-child:not(:last-child),
+  & > *:first-child:not(:last-child) input {
+    border-radius: ${radius} 0 0 ${radius};
+  }
+
+  & > *:last-child:not(:first-child),
+  & > *:last-child:not(:first-child) input {
+    border-radius: 0 ${radius} ${radius} 0;
+  }
+
+  &:not(:last-child) {
+    margin-right: 0.5em;
+  }
+`
+
+export const VGroup = Group.extend`
   flex-direction: column;
-  & > * {
-    margin: 0 0 -1px 0 !important;
-  }
-  & > *:not(:first-child):not(:last-child) {
-    border-radius: 0;
-  }
-  & > *:first-child:not(:last-child) {
+
+  & > *:first-child:not(:last-child),
+  & > *:first-child:not(:last-child) input {
     border-radius: ${radius} ${radius} 0 0;
   }
-  & > *:last-child:not(:first-child) {
+
+  & > *:last-child:not(:first-child),
+  & > *:last-child:not(:first-child) input {
     border-radius: 0 0 ${radius} ${radius};
-    margin-right: 0 !important;
   }
 `

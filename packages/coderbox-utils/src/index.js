@@ -81,29 +81,34 @@ export const isCircular = p => {
   `
 }
 
+export const isColor = p => {
+  if (!p.color) return
+
+  return css`
+    color: ${p => textOnColor(color(p))};
+    background: ${p => color(p)};
+    border-color: ${p => color(p)};
+  `
+}
+
+export const isHover = p => {
+  if (!p.color || p.static) return
+
+  return css`
+    &:hover {
+      color: ${p => textOnColor(color(p))};
+      background: ${p => hover(color(p))};
+      border-color: ${p => hover(color(p))};
+    }
+  `
+}
+
 export const isInverted = p => {
   if (!p.inverted || !p.color) return
   return css`
     color: ${p => color(p)};
     background: ${p => textOnColor(color(p))};
     border-color: ${p => textOnColor(color(p))};
-  `
-}
-
-export const isColor = p => {
-  if (!p.color) return
-  return css`
-    color: ${p => textOnColor(color(p))};
-    background: ${p => color(p)};
-
-    &:hover {
-      background: ${p => hover(color(p))};
-      border-color: ${p => hover(color(p))};
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 0.125em ${p => lighten(0.3, color(p))};
-    }
   `
 }
 

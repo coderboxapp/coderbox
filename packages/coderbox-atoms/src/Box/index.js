@@ -1,24 +1,30 @@
 import React from 'react'
-import { string } from 'prop-types'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as s from './styles'
 
-const Component = (props) => {
-  const className = cx(`box`, props.className)
-  return (
-    <s.Box {...props} className={className} />
-  )
+class Box extends React.Component {
+  static displayName = 'Box'
+  static defaultProps = {
+    padding: '1em',
+    size: 'normal',
+    color: 'white',
+    inverted: false
+  }
+
+  static propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.string,
+    padding: PropTypes.string,
+    inverted: PropTypes.bool
+  }
+
+  render () {
+    const className = cx(`box`, this.props.className)
+    return (
+      <s.Box {...this.props} className={className} />
+    )
+  }
 }
 
-Component.displayName = 'Box'
-Component.defaultProps = {
-  padding: '0.6em',
-  color: 'white'
-}
-Component.propTypes = {
-  vSpace: string,
-  hSpace: string,
-  padding: string
-}
-
-export default Component
+export default Box

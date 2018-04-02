@@ -1,6 +1,9 @@
 {
   "version": "1.0.0",
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
     "storybook": "start-storybook -p 6005",
     "storybook-deploy": "storybook-to-ghpages"
   },
@@ -20,6 +23,7 @@
     "del-cli": "^1.1.0",
     "lerna": "^2.9.1",
     "standard": "^11.0.1",
+    "storybook-readme": "^3.3.0",
     "webpack": "^3.5.4",
     "webpack-node-externals": "^1.6.0",
     "yargs": "^11.0.0"

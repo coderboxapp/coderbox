@@ -21,38 +21,36 @@ theme.colors = {
   secondary: '#f4511e',
   success: '#00d1b2',
   danger: '#e91e63',
-  grey: '#cccccc',
+  grey: '#808080',
   black: '#363636',
   white: 'white',
   primaryLight: '#65b3e3',
   secondaryLight: '#f4754e',
   successLight: '#49e5ce',
-  dangerLight: '#e91e63'
+  dangerLight: '#e91e63',
+  greyLight: '#cccccc'
 }
 
 theme.components = {
   group: {
-    borderRadius: 0
+    borderRadius: 3
   },
   box: {
     border: '1px solid rgba(34,36,38, 0.15)',
-    borderRadius: 0,
+    borderRadius: 3,
     boxShadow: '0 1px 3px rgba(10, 10, 10, 0.1)'
   },
   button: {
     height: '2.40em',
     padding: '0px 1.0em',
-    boxShadow: '0 -2px 0 rgba(0,0,0,0.20) inset',
-    border: '1px solid',
-    borderRadius: 0,
-    borderColor: '#e8eaed',
-    color: 'black',
+    border: '1px solid #CCC',
+    borderRadius: 3,
+    color: '#363636',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
-    hoverBackground: '#f6f7f8',
-    disabledOpacity: 0.5
+    hoverBackground: '#f6f7f8'
   },
   tag: {
-    border: '1px solid gray',
+    border: '1px solid #888',
     borderRadius: 0,
     height: '2em'
   },

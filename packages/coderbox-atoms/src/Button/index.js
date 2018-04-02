@@ -12,7 +12,8 @@ class Button extends React.Component {
     size: 'normal',
     loading: false,
     icon: null,
-    iconPosition: 'left'
+    iconPosition: 'left',
+    static: false
   }
 
   static propTypes = {
@@ -20,7 +21,8 @@ class Button extends React.Component {
     size: PropTypes.string,
     loading: PropTypes.bool,
     icon: PropTypes.string,
-    iconPosition: PropTypes.string
+    iconPosition: PropTypes.string,
+    static: PropTypes.bool
   }
 
   render () {

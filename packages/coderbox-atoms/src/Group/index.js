@@ -1,25 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { compact } from 'lodash'
-import * as s from './styles'
+import { HGroup, VGroup } from './styles'
 
-const Component = ({ as = 'div', children = [], isVertical, ...props }) => {
-  let className = cx('group', props.className)
+class Group extends React.Component {
+  static displayName = 'Group'
+  static defaultProps = {
+    vertical: false
+  }
 
-  const Element = isVertical ? s.VGroup.withComponent(as) : s.HGroup.withComponent(as)
-  const items = React.Children.map(
-    compact(children),
-    (item, i) => (
-      React.cloneElement(item, {...props})
+  static propTypes = {
+    vertical: PropTypes.bool
+  }
+
+  render () {
+    const className = cx('group', this.props.className)
+    const { vertical, children, ...props } = this.props
+    const StyledGroup = vertical ? VGroup : HGroup
+
+    const items = React.Children.map(
+      compact(children),
+      c => {
+        return React.cloneElement(c, {...props})
+      }
     )
-  )
 
-  return (
-    <Element {...props} className={className}>
-      {items}
-    </Element>
-  )
+    return (
+      <StyledGroup {...props} className={className}>
+        {items}
+      </StyledGroup>
+    )
+  }
 }
 
-Component.displayName = 'Group'
-export default Component
+export default Group
