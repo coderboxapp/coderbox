@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities used by coderbox components.",
   "main": "lib/index.js",
   "scripts": {
@@ -21,8 +21,8 @@
   "author": "Ghiura Alexandru",
   "license": "ISC",
   "dependencies": {
-    "styled-components": "^2.1.2",
     "lodash": "^4.17.4",
-    "polished": "^1.3.0"
+    "polished": "^1.3.0",
+    "styled-components": "^2.1.2"
   }
 }
