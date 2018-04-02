@@ -1,22 +1,32 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withTheme } from '../utils'
-import { Box, Button, Icon, YesNo } from '../index'
+import { withDocs } from 'storybook-readme'
+import { withTheme } from '@coderbox/utils'
+import * as themes from '@coderbox/themes'
+import * as docs from './docs'
+import { YesNo, Box, Button, Icon } from '../index'
 
 const stories = storiesOf('atoms/YesNo', module)
 
-stories.add('default', withTheme(() => {
+stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
   return (
     <div>
-      <Box>
-        <YesNo color='primary' isOutlined onYes={() => console.log('yess')}>
+      <Box color='success' inverted>
+        <YesNo color='primary' onYes={() => console.log('yess')} padding='5px'>
           <Button color='primary'>
             <Icon name='check-circle' />
             Accept
           </Button>
         </YesNo>
-        <YesNo size='small' color='danger' tone='1' isLeft>
-          <Button size='small' color='gray'>
+        <br />
+        <YesNo color='success' outlined onYes={() => console.log('yess')} padding='5px'>
+          <Button color='success' outlined>
+            Like Zebbra ?
+          </Button>
+        </YesNo>
+        <br />
+        <YesNo size='small' color='danger' outlined left padding='5px'>
+          <Button size='small' color='danger'>
             <Icon name='trash' />
             Delete
           </Button>
@@ -24,4 +34,4 @@ stories.add('default', withTheme(() => {
       </Box>
     </div>
   )
-}))
+})))

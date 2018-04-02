@@ -1,6 +1,6 @@
-# Box
+# Loader
 
-A **box** to contain other elements.
+A **loader** alerts a user to wait for an activity to complete.
 
 ### Properties:
 
@@ -17,7 +17,7 @@ A **box** to contain other elements.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">null</td>
       <td>
-        A button can have different colors. <br />
+        A loader can have different colors. <br />
         **Enum**:
         `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
       </td>
@@ -27,31 +27,34 @@ A **box** to contain other elements.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">normal</td>
       <td>
-        A button can have different sizes. <br />
+        A loader can have different sizes. <br />
         **Enum**:
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>
     </tr>
     <tr>
-      <td>`padding`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">1em</td>
-      <td>**Ex:** 2px, 0.5rem.</td>
+      <td>`children`</td>
+      <td class='type' align="center">node</td>
+      <td class='default-type' align="center"></td>
+      <td>Primary content. **Ex.**: Loading...</td>
     </tr>
     <tr>
       <td>`inverted`</td>
       <td class='type' align="center">bool</td>
       <td class='default-type' align="center">false</td>
-      <td>A box can have its colors inverted.</td>
+      <td>A loader can have its colors inverted</td>
     </tr>
     <tr>
-      <td>`space`</td>
-      <td class='type' align="center">number</td>
-      <td class='default-type' align="center">undefined</td>
-      <td>Add space between children.</td>
+      <td>`vertical`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>
+        A loader can display it's children **vertical**.
+      </td>
     </tr>
   </tbody>
 </table>
+
 
 ### Demo:
 
@@ -61,14 +64,14 @@ A **box** to contain other elements.
 
 ```js
 import React from 'react'
-import { Box } from 'zebbra'
+import { Loader } from 'zebbra'
 
 const Component = () => (
   <div>
-    <Box>Some text in box</Box>
-    <Box size='small' color='primary'>Small box with some text in box</Box>
-    <Box color='success' inverted>Some text in box</Box>
-    <Box color='success' stacked>This is stacked</Box>
+    <Loader />
+    <Loader color='danger' size='large' />
+    <Loader color='#FFF000' />
+    <Loader color='#FFF000' inverted vertical>Loading...</Loader>
   </div>
 )
 

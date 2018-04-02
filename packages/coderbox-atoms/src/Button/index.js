@@ -47,7 +47,7 @@ class Button extends React.Component {
         {btnChildren}
         {props.loading && (
           <div className='loader-container'>
-            <Loader size={props.size} color={props.color} inverted />
+            <Loader size={props.size} color={props.color} inverted={!props.inverted && !props.outlined} />
           </div>
         )}
       </s.Button>

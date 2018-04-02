@@ -1,19 +1,36 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
-import * as s from './styles'
+import { StyledTitle } from './styles'
 
-const Component = ({ as = 'h1', isInverted, ...props }) => {
-  const className = cx(`title`, props.className)
-  const Element = s.Title.withComponent(as)
+class Title extends React.Component {
+  static displayName = 'Title'
+  static defaultProps = {
+    as: 'h3',
+    size: 'normal',
+    thin: false,
+    strong: false,
+    textAlign: 'left',
+    margin: undefined
+  }
+  static propTypes = {
+    as: PropTypes.string,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    thin: PropTypes.bool,
+    strong: PropTypes.bool,
+    textAlign: PropTypes.string,
+    margin: PropTypes.string
+  }
+  render () {
+    const { as, children, ...props } = this.props
+    const className = cx(`title`, this.props.className)
+    const Component = StyledTitle.withComponent(as)
 
-  return (
-    <Element {...props} isOutlined={!isInverted} className={className} />
-  )
+    return (
+      <Component {...props} className={className}>{children}</Component>
+    )
+  }
 }
 
-Component.displayName = 'Title'
-Component.defaultProps = {
-  as: 'h1'
-}
-
-export default Component
+export default Title

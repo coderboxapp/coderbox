@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import {
   isColor,
   isHover,
@@ -10,6 +10,26 @@ import {
   isSize,
   px
 } from '@coderbox/utils'
+
+const isWithIcon = p => {
+  return css`
+    & .icon {
+      margin: 0 5px 0 0;
+      ${isSize}
+    }
+    &.icon-reverse {
+      & .icon {
+        margin: 0 0 0 5px;
+      }
+    }
+    &.icon-only {
+      padding: 0px 0.6em;
+      & .icon {
+        margin: 0;
+      }
+    }
+  `
+}
 
 export const Button = styled.div.attrs({
   button: p => ({...p.theme.components.button})
@@ -45,6 +65,7 @@ export const Button = styled.div.attrs({
   ${isInverted}
   ${isLoading}
   ${isDisabled}
+  ${isWithIcon}
 
   &:not(:last-child) {
     margin: 0 0.25em 0 0;

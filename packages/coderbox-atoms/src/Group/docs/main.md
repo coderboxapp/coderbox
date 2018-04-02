@@ -20,6 +20,12 @@ A **group** to contain other elements and group them. <br />
         A group can display it's children **vertical**.
       </td>
     </tr>
+    <tr>
+      <td>`fluid`</td>
+      <td class='type' align="center">bool</td>
+      <td class='default-type' align="center">false</td>
+      <td>A group can take the width of its container.</td>
+    </tr>
   </tbody>
 </table>
 

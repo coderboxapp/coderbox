@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/atoms"
+    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/coderbox-atoms"
   },
   "keywords": [
     "react",

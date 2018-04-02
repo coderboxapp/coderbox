@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withTheme } from '@coderbox/utils'
 import { withDocs } from 'storybook-readme'
+import { withTheme } from '@coderbox/utils'
 import * as themes from '@coderbox/themes'
 import * as docs from './docs'
 import { Button, Box } from '../index'
@@ -14,7 +14,6 @@ stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
       <Box color='success' inverted>
         <Button>Normal</Button>
         <Button color='primary'>Primary</Button>
-        <Button color='primaryLight'>Primary</Button>
         <Button color='success'>Success</Button>
         <Button color='danger'>Danger</Button>
         <Button color='grey'>Gray</Button>
@@ -27,7 +26,7 @@ stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
         <Button color='success' inverted>Success</Button>
         <Button color='danger' inverted>Danger</Button>
         <Button color='gray' inverted>Gray</Button>
-        <Button color='gray' inverted>Light</Button>
+        <Button color='greyLight' inverted>Light</Button>
         <Button color='black' inverted>Black</Button>
       </Box>
       <Box>
@@ -41,62 +40,40 @@ stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
   )
 })))
 
-// stories.add('with different size', withTheme(() => {
-//   return (
-//     <Box>
-//       <Button color='primary' size='tiny'>Tiny</Button>
-//       <Button color='success' size='small'>Small</Button>
-//       <Button color='danger' size='normal'>Normal</Button>
-//       <Button color='gray' size='large'>Large</Button>
-//       <Button color='black' size='xlarge'>XLarge</Button>
-//     </Box>
-//   )
-// }))
+stories.add('with different size', withTheme(themes.main, withDocs(docs.withSize, () => {
+  return (
+    <Box>
+      <Button color='primary' size='tiny'>Tiny</Button>
+      <Button color='success' size='small'>Small</Button>
+      <Button color='danger' size='normal'>Normal</Button>
+      <Button color='gray' size='large'>Large</Button>
+      <Button color='black' size='xlarge'>XLarge</Button>
+    </Box>
+  )
+})))
 
-// stories.add('with icon', withTheme(() => {
-//   return (
-//     <Box>
-//       <Button color='primary' size='normal'>
-//         <Icon name='star' />
-//         Some text
-//         </Button>
-//       <Button color='success' size='small' isOutlined>
-//         <Icon name='star' />
-//         Some text
-//         </Button>
-//       <Button color='gray' tone={2} size='normal' isIcon>
-//         <Icon name='stack-overflow' />
-//       </Button>
-//     </Box>
-//   )
-// }))
+stories.add('with icon', withTheme(themes.main, withDocs(docs.withIcon, () => {
+  return (
+    <div className='story-box'>
+      <Box color='success' inverted>
+        <Button icon='cubes'>Cubes</Button>
+        <Button color='primary' icon='star' iconPosition='right'>Primary</Button>
+        <Button color='success' icon='rss'>Success</Button>
+        <Button color='danger' icon='shopping-basket' outlined>Danger</Button>
+        <Button color='grey' icon='shield' />
+      </Box>
+    </div>
+  )
+})))
 
-// stories.add('with loading', withTheme(() => {
-//   return (
-//     <div>
-//       <Box>
-//         <Button color='primary' size='normal' isLoading>
-//           <Icon name='star' />
-//           Some text
-//           </Button>
-//         <Button color='success' size='normal' isOutlined isLoading>
-//           <Icon name='star' />
-//           Some text
-//           </Button>
-//         <Button color='gray' isLoading>
-//           <Icon name='trash' />
-//           Some text
-//           </Button>
-//       </Box>
-//       <Box>
-//         <Button color='gray' size='small' isLoading>
-//           <Icon name='star' />
-//           Some text
-//           </Button>
-//         <Button color='gray' tone='2' size='small' isIcon isLoading>
-//           <Icon name='star' />
-//         </Button>
-//       </Box>
-//     </div>
-//   )
-// }))
+stories.add('with loading', withTheme(themes.main, withDocs(docs.withLoaders, () => {
+  return (
+    <div>
+      <Box color='#f7f7f7'>
+        <Button color='primary' icon='star' loading>Some text</Button>
+        <Button color='primary' icon='star' inverted loading>Some text</Button>
+        <Button color='success' outlined loading>Some text</Button>
+      </Box>
+    </div>
+  )
+})))

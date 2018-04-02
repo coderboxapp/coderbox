@@ -1,15 +1,34 @@
 import React from 'react'
-import * as styles from './styles'
+import PropTypes from 'prop-types'
+import cx from 'classnames'
+import { StyledText } from './styles'
 
-const Component = ({children, ...props}) => {
-  return (
-    <styles.Text {...props}>{children}</styles.Text>
-  )
+class Text extends React.Component {
+  static displayName = 'Text'
+  static defaultProps = {
+    size: 'normal',
+    thin: false,
+    strong: false,
+    padding: '0 0 0 0',
+    textAlign: 'left'
+  }
+  static propTypes = {
+    color: PropTypes.string,
+    size: PropTypes.string,
+    thin: PropTypes.bool,
+    strong: PropTypes.bool,
+    textAlign: PropTypes.string,
+    padding: PropTypes.string
+  }
+
+  render () {
+    const { as, children, ...props } = this.props
+    const className = cx(`text`, this.props.className)
+
+    return (
+      <StyledText {...props} className={className}>{children}</StyledText>
+    )
+  }
 }
 
-Component.displayName = 'Text'
-Component.defaultProps = {
-  size: 'small'
-}
-
-export default Component
+export default Text

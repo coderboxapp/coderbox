@@ -1,41 +1,69 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Group, Button, Icon } from '../index'
-import { compose, withState, mapProps } from 'recompose'
-import * as s from './styles'
+import { Icon, Button, Group } from '../index'
+import { StyledYesNo } from './styles'
 
-const Component = ({ children, color, size, isLeft, isOpen, setIsOpen, onYes, onNo, ...props }) => {
-  const className = cx(`yesno`, props.className)
-  const MainButton = React.cloneElement(React.Children.only(children), {
-    onClick: () => setIsOpen(!isOpen)
-  })
+class YesNo extends React.Component {
+  state = {
+    isOpen: false
+  }
 
-  return (
-    <s.YesNo {...props} color={color} className={className}>
-      <Group color={color} size={size}>
-        {!isLeft && MainButton}
-        {isOpen && <Button className='btnYes' isIcon onClick={onYes} {...props}><Icon name='check' /></Button>}
-        {isOpen && <Button className='btnNo' isIcon onClick={onNo} {...props}><Icon name='times' /></Button>}
-        {isLeft && MainButton}
-      </Group>
-    </s.YesNo>
-  )
+  static displayName = 'YesNo'
+  static defaultProps = {
+    left: false,
+    padding: '0'
+  }
+
+  static propTypes = {
+    left: PropTypes.bool,
+    padding: PropTypes.string,
+    onYes: PropTypes.func,
+    onNo: PropTypes.func
+  }
+
+  handleYes = () => {
+    this.close()
+    if (this.props.onYes) this.props.onYes()
+  }
+
+  handleNo = () => {
+    this.close()
+    if (this.props.onNo) this.props.onNo()
+  }
+
+  open = () => {
+    this.setState({isOpen: true})
+  }
+
+  close = () => {
+    this.setState({isOpen: false})
+  }
+
+  toggle = () => {
+    this.setState({isOpen: !this.state.isOpen})
+  }
+
+  render () {
+    const className = cx(`yesno`, this.props.className)
+    const { left, children, ...props } = this.props
+    const { isOpen } = this.state
+
+    const MainButton = React.cloneElement(React.Children.only(children), {
+      onClick: () => this.toggle()
+    })
+
+    return (
+      <StyledYesNo {...props} className={className}>
+        <Group>
+          {!left && MainButton}
+          {isOpen && <Button className='btnYes' isIcon onClick={this.handleYes} {...props}><Icon name='check' /></Button>}
+          {isOpen && <Button className='btnNo' isIcon onClick={this.handleNo} {...props}><Icon name='times' /></Button>}
+          {left && MainButton}
+        </Group>
+      </StyledYesNo>
+    )
+  }
 }
 
-Component.displayName = 'YesNo'
-export default compose(
-  withState('isOpen', 'setIsOpen', false),
-  mapProps(props => {
-    return {
-      ...props,
-      onYes: () => {
-        props.setIsOpen(false)
-        if (props.onYes) props.onYes()
-      },
-      onNo: () => {
-        props.setIsOpen(false)
-        if (props.onNo) props.onNo()
-      }
-    }
-  })
-)(Component)
+export default YesNo

@@ -1,6 +1,21 @@
 import styled, { css } from 'styled-components'
+import { color, textOnColor, isSize } from '@coderbox/utils'
 import { rgba } from 'polished'
-import { color, isSize, isInverted, isCircular } from '@coderbox/utils'
+
+const isInverted = p => {
+  if (!p.inverted) return
+  return css`
+    background-color: ${p => color(p)};
+    color: ${p => textOnColor(color(p))};
+  `
+}
+
+const isCircular = p => {
+  if (!p.circular) return
+  return css`
+    border-radius: 999px;
+  `
+}
 
 const hasShadow = p => {
   if (!p.shadow) return
@@ -18,10 +33,10 @@ export const Icon = styled.i`
   width: ${p => p.theme.components.icon.width};
   height: ${p => p.theme.components.icon.height};
   line-height: 1.5;
-  ${p => p.color && color(p)}
 
-  ${isSize}
+  ${p => p.color && css`color: ${p => color(p)};`}
   ${isInverted}
   ${isCircular}
+  ${isSize}
   ${hasShadow}
 `

@@ -51,7 +51,7 @@ theme.components = {
   },
   tag: {
     border: '1px solid #888',
-    borderRadius: 0,
+    borderRadius: 3,
     height: '2em'
   },
   input: {

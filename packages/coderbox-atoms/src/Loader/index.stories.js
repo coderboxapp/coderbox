@@ -1,18 +1,27 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withTheme } from '../utils'
+import { withDocs } from 'storybook-readme'
+import { withTheme } from '@coderbox/utils'
+import * as themes from '@coderbox/themes'
+import * as docs from './docs'
 import { Loader, Box } from '../index'
 
-let stories = storiesOf('atoms/Loader', module)
+const stories = storiesOf('atoms/Loader', module)
 
-stories.add('default', withTheme(() => {
+stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
   return (
     <div>
-      <Box color='primary' vSpace='0.8rem'>
+      <Box>
         <Loader />
         <Loader color='danger' size='large' />
-        <Loader color='success' />
+        <Loader color='#FFF000' />
+      </Box>
+      <Box>
+        <Loader color='blue'>Loading...</Loader>
+      </Box>
+      <Box color='success'>
+        <Loader color='#FFF000' inverted vertical>Loading...</Loader>
       </Box>
     </div>
   )
-}))
+})))

@@ -1,6 +1,6 @@
-# Box
+# YesNo
 
-A **box** to contain other elements.
+A **YesNo** containar can be used ask user to choose yes or no after he clicks a button.
 
 ### Properties:
 
@@ -17,7 +17,7 @@ A **box** to contain other elements.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">null</td>
       <td>
-        A button can have different colors. <br />
+        A yesno can have different colors. <br />
         **Enum**:
         `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
       </td>
@@ -27,31 +27,32 @@ A **box** to contain other elements.
       <td class='type' align="center">string</td>
       <td class='default-type' align="center">normal</td>
       <td>
-        A button can have different sizes. <br />
+        A yesno can have different sizes. <br />
         **Enum**:
         `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
       </td>
     </tr>
     <tr>
-      <td>`padding`</td>
-      <td class='type' align="center">string</td>
-      <td class='default-type' align="center">1em</td>
-      <td>**Ex:** 2px, 0.5rem.</td>
-    </tr>
-    <tr>
-      <td>`inverted`</td>
+      <td>`isLeft`</td>
       <td class='type' align="center">bool</td>
       <td class='default-type' align="center">false</td>
-      <td>A box can have its colors inverted.</td>
+      <td>A yesno can be display to the left</td>
     </tr>
     <tr>
-      <td>`space`</td>
-      <td class='type' align="center">number</td>
-      <td class='default-type' align="center">undefined</td>
-      <td>Add space between children.</td>
+      <td>`onYes`</td>
+      <td class='type' align="center">func</td>
+      <td class='default-type' align="center">null</td>
+      <td>Called when user chooses yes</td>
+    </tr>
+    <tr>
+      <td>`onNo`</td>
+      <td class='type' align="center">func</td>
+      <td class='default-type' align="center">null</td>
+      <td>Called when user chooses no</td>
     </tr>
   </tbody>
 </table>
+
 
 ### Demo:
 
@@ -61,14 +62,22 @@ A **box** to contain other elements.
 
 ```js
 import React from 'react'
-import { Box } from 'zebbra'
+import { YesNo, Button, Icon } from 'zebbra'
 
 const Component = () => (
   <div>
-    <Box>Some text in box</Box>
-    <Box size='small' color='primary'>Small box with some text in box</Box>
-    <Box color='success' inverted>Some text in box</Box>
-    <Box color='success' stacked>This is stacked</Box>
+    <YesNo color='primary' outlined onYes={() => console.log('yess')}>
+      <Button color='primary'>
+        <Icon name='check-circle' />
+        Accept
+      </Button>
+    </YesNo>
+    <YesNo size='small' color='danger' outlined left padding='5px'>
+      <Button size='small' color='danger'>
+        <Icon name='trash' />
+        Delete
+      </Button>
+    </YesNo>
   </div>
 )
 

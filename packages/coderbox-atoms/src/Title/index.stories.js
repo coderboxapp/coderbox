@@ -1,47 +1,56 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withTheme } from '../utils'
-import { Box, Title, Subtitle, Link } from '../Box'
+import { withDocs } from 'storybook-readme'
+import { withTheme } from '@coderbox/utils'
+import * as themes from '@coderbox/themes'
+import * as docs from './docs'
+import { Title, Box } from '../index'
 
-let stories = storiesOf('atoms/Title + Subtitle', module)
+const stories = storiesOf('atoms/Title', module)
 
-stories.add('with different sizes', withTheme(() => {
+stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
   return (
-    <Box>
-      <Title size='huge'>Title Huge</Title>
-      <Subtitle size='large'>This is Subtitle Large, under title</Subtitle>
-      <Title size='xlarge'>Title XLarge</Title>
-      <Subtitle size='normal'>This is Subtitle Normal, under title</Subtitle>
-      <Title size='large'>Title Large</Title>
-      <Subtitle size='small'>This is <b>Subtitle</b> Small, under title</Subtitle>
-      <Title size='normal'>Title Normal</Title>
-      <Title size='small'>Title Small</Title>
-    </Box>
+    <div>
+      <Box color='danger' inverted>
+        <Title margin='0'>Title Normal</Title>
+        <Title thin>Thin Title Normal</Title>
+        <Title strong>Strong Title Normal</Title>
+      </Box>
+      <Box color='success' inverted>
+        <Title>Zebbra Title</Title>
+        <Title subtitle thin size='small' color='gray'>This is a Zebbra subtitle</Title>
+      </Box>
+      <Box color='success' inverted>
+        <Title strong color='success' textAlign='center'>Zebbra Centered Title</Title>
+        <Title subtitle size='small' color='successLight' textAlign='center'>This is a Zebbra subtitle</Title>
+      </Box>
+    </div>
   )
-}))
+})))
 
-stories.add('with colors', withTheme(() => {
+stories.add('with different size', withTheme(themes.main, withDocs(docs.withSize, () => {
   return (
-    <Box>
-      <Title size='large'>Title Default</Title>
-      <Subtitle size='small' color='gray'>This is Subtitle gray, under title</Subtitle>
-      <Title size='large' color='primary'>Title Primary</Title>
-      <Subtitle size='small' color='primary' tone={2}>This is Subtitle primary tone 1, under title</Subtitle>
-      <Title size='large' color='success'>Title Success</Title>
-      <Subtitle size='small' color='danger' tone={2}>This is Subtitle success tone 1, under title</Subtitle>
-    </Box>
+    <div>
+      <Box color='success' inverted>
+        <Title size='small'>Title Small</Title>
+        <Title>Title Normal</Title>
+        <Title size='large'>Title Large</Title>
+        <Title size='xlarge'>Title Extra Large</Title>
+      </Box>
+    </div>
   )
-}))
+})))
 
-stories.add('as link colors', withTheme(() => {
+stories.add('with different colors usage', withTheme(themes.main, withDocs(docs.withColor, () => {
   return (
-    <Box>
-      <Link>
-        <Title size='large'>Title Default</Title>
-      </Link>
-      <Link color='black'>
-        <Title size='large'>Title Black</Title>
-      </Link>
-    </Box>
+    <div>
+      <Box color='success' inverted>
+        <Title color='primary'>Title Primary</Title>
+        <Title color='success'>Title Success</Title>
+        <Title color='danger'>Title Danger</Title>
+        <Title color='purple'>Title Purple</Title>
+        <Title color='grey'>Title Grey</Title>
+      </Box>
+    </div>
   )
-}))
+})))

@@ -1,43 +1,37 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withTheme } from '../utils'
+import { withDocs } from 'storybook-readme'
+import { withTheme } from '@coderbox/utils'
+import * as themes from '@coderbox/themes'
+import * as docs from './docs'
 import { Icon, Box } from '../index'
 
-let stories = storiesOf('atoms/Icon', module)
-stories.add('simple usage', withTheme(() => {
+const stories = storiesOf('atoms/Icon', module)
+
+stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
   return (
     <div>
-      <Box>
+      <Box color='success' inverted>
+        <Icon name='star' color='primary' />
+        <Icon name='star' color='success' />
         <Icon name='star' color='black' />
         <Icon name='star' color='gray' />
-        <Icon name='github' color='primary' hasBorder />
-        <Icon name='gift' color='success' />
-        <Icon name='bug' color='danger' />
+        <Icon name='star' color='danger' shadow />
       </Box>
-      <Box>
-        <Icon name='star' color='black' isInverted />
-        <Icon name='star' color='gray' isInverted />
-        <Icon name='github' color='primary' isInverted />
-        <Icon name='gift' color='success' isInverted />
-        <Icon name='bug' color='danger' isInverted />
+      <Box color='primary' inverted space='8px'>
+        <Icon name='star' color='black' inverted />
+        <Icon name='star' color='gray' inverted />
+        <Icon name='github' color='primary'inverted />
+        <Icon name='gift' color='success' inverted shadow />
+        <Icon name='bug' color='danger' inverted circular shadow size='huge' />
+        <Icon name='lock' color='primary' inverted shadow size='huge' />
       </Box>
-      <Box>
-        <Icon name='star' color='black' isCircular hasBorder />
-        <Icon name='github' color='primary' isCircular isInverted />
-        <Icon name='bug' color='success' isCircular isInverted />
+      <Box color='danger' inverted>
+        <Icon name='star' color='black' />
+        <Icon name='star' color='black' size='medium' />
+        <Icon name='star' color='primary' size='large' />
+        <Icon name='star' color='success' size='xlarge' />
       </Box>
     </div>
   )
-}))
-
-stories.add('with different size', withTheme(() => {
-  return (
-    <Box>
-      <Icon name='star' color='black' isInverted size='small' />
-      <Icon name='star' color='gray' isInverted />
-      <Icon name='github' color='primary' isInverted size='large' />
-      <Icon name='gift' color='success' isInverted size='xlarge' />
-      <Icon name='bug' color='danger' isInverted size='huge' />
-    </Box>
-  )
-}))
+})))

@@ -39,15 +39,15 @@ const isInverted = p => {
   `
 }
 
-const hasChildPadding = p => {
-  if (!p.childPadding) return
+const hasSpace = p => {
+  if (!p.space) return
   return css`
-    > * { padding: ${p.childPadding} }
+    > *:not(:first-child):not(:last-child) { margin: ${p.space} }
   `
 }
 
 export const Box = styled.div.attrs({
-  static: true,
+  static: 'true',
   box: p => ({...p.theme.components.box})
 })`
   position: relative;
@@ -67,5 +67,5 @@ export const Box = styled.div.attrs({
   ${isStacked}
   ${isColor}
   ${isInverted}
-  ${hasChildPadding}
+  ${hasSpace}
 `

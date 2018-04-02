@@ -1,12 +1,11 @@
 import styled from 'styled-components'
-import { px } from '@coderbox/utils'
+import { px, isFluid } from '@coderbox/utils'
 
 const radius = p => px(p.theme.components.group.borderRadius)
 
 const Group = styled.div`
   display: inline-flex;
   box-sizing: border-box;
-  width: 100%;
 
   & > * {
     margin: 0 0px 0 0 !important;
@@ -19,6 +18,8 @@ const Group = styled.div`
   &:not(:last-child) {
     margin-right: 0.5em;
   }
+
+  ${isFluid}
 `
 
 export const HGroup = Group.extend`
