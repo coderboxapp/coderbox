@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/themes",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Themes to be used with coderbox components.",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "styled-components",
+    "react",
     "themes"
   ],
   "repository": {

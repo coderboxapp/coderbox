@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/utils",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Utilities used by coderbox components.",
   "main": "lib/index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "styled-components",
+    "react",
     "utils"
   ],
   "repository": {
