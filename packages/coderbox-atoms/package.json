@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/atoms",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Core react components.",
   "main": "lib/index.js",
   "scripts": {
@@ -15,14 +15,13 @@
     "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/coderbox-atoms"
   },
   "keywords": [
-    "react",
-    "components"
+    "react"
   ],
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@coderbox/themes": "^2.0.4",
-    "@coderbox/utils": "^2.0.4",
+    "@coderbox/themes": "^2.0.5",
+    "@coderbox/utils": "^2.0.5",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
     "react": "16.x",
