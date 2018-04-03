@@ -6,8 +6,9 @@
   "scripts": {
     "del": "del",
     "prepare": "npm build",
+    "prebuild": "npm run clean",
     "clean": "del lib",
-    "build": "webpack --env production",
+    "build": "babel src --out-dir lib --ignore '**/*.stories.js, docs/**'",
     "outdated": "npm outdated"
   },
   "repository": {
@@ -20,11 +21,12 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@coderbox/hocs": "^2.0.0",
     "@coderbox/themes": "^2.0.5",
     "@coderbox/utils": "^2.0.5",
-    "@coderbox/hocs": "^2.0.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
+    "polished": "^1.9.2",
     "react": "16.x",
     "react-dom": "16.x",
     "recompose": "^0.25.0",
