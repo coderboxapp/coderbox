@@ -1,21 +1,24 @@
 import styled, { keyframes } from 'styled-components'
 
-const fade = keyframes`
-  from {
-    opacity: 0;
-  }
+export const animShow = keyframes`
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+`
 
-  to {
-    opacity: 1;
-  }
+export const animHide = keyframes`
+  from { transform: translateY(0); visibility: visble; }
+  to { transform: translateY(-100%); visibility: hidden; }
 `
 
 export const Stack = styled.div`
   position: relative;
+  overflow: hidden;
 `
 
 export const StackItem = styled.div`
-  display: ${p => p.isVisible ? 'block' : 'none'};
+  display: 'block';
+  height: ${p => p.visible ? 'auto' : 0};
+  visibility: ${p => p.visible ? 'visible' : 'hidden'};
   padding: 1px 0;
-  animation: ${fade} 0.25s linear;
+  animation: ${p => p.animation} 0.35s ease-in-out;
 `

@@ -1,29 +1,54 @@
 import * as React from 'react'
-import { compact } from 'lodash'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
-import { Stack, StackItem } from './styles'
+import * as s from './styles'
 
-const Component = ({ index, children, ...props }) => {
-  const className = cx('stack', props.className)
-  const items = React.Children.map(
-    compact(children),
-    (item, i) => (
-      <StackItem isVisible={index === i}>
-        {React.cloneElement(item, {})}
-      </StackItem>
+class Stack extends React.Component {
+  state = { index: 0 }
+
+  static displayName = 'Stack'
+  static defaultProps = {
+    items: () => []
+  }
+
+  static propTypes = {
+    items: PropTypes.func
+  }
+
+  next = () => {
+    let index = this.state.index + 1
+    let max = this.props.items().length - 1
+
+    if (index > max) index = 0
+    this.setState({ index: index })
+  }
+
+  prev = () => {
+    let index = this.state.index - 1
+    this.setState({ index: index < 0 ? 0 : index })
+  }
+
+  render () {
+    let className = cx('stack', this.props.className)
+    let { items, ...props } = this.props
+    let { index } = this.state
+
+    items = items(index, this.next, this.prev)
+    items = items.map((item, i) => {
+      let visible = index === i
+      let anim = s.animHide
+
+      if (visible) anim = s.animShow
+      return React.cloneElement(item, {key: i, visible: visible, animation: anim})
+    })
+
+    return (
+      <s.Stack {...props} className={className}>
+        {items}
+      </s.Stack>
     )
-  )
-
-  return (
-    <Stack {...props} className={className}>
-      {items}
-    </Stack>
-  )
+  }
 }
 
-Component.displayName = 'Stack'
-Component.defaultProps = {
-  index: 0
-}
-
-export default Component
+Stack.Item = s.StackItem
+export default Stack
