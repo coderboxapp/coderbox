@@ -16,20 +16,17 @@ stories.add(
             items={(index, next, prev) => {
               return [
                 <Stack.Item>
-                  <Box color='success'>
-                    <Title>Stack item {index}</Title>
-                    <Button onClick={next}>Next</Button>
-                  </Box>
+                  <Title>Stack one</Title>
+                  <Button onClick={prev}>Prev</Button>
+                  <Button onClick={next}>Next</Button>
                 </Stack.Item>,
                 <Stack.Item>
-                  <Box color='danger'>
-                    <Title>Stack item {index}</Title>
-                    <Button onClick={prev}>Prev</Button>
-                    <Button onClick={next}>Next</Button>
-                  </Box>
+                  <Title>Stack two</Title>
+                  <Button onClick={prev}>Prev</Button>
+                  <Button onClick={next}>Next</Button>
                 </Stack.Item>,
                 <Stack.Item>
-                  <Title>Stack item {index}</Title>
+                  <Title>Stack three</Title>
                   <Button onClick={prev}>Prev</Button>
                   <Button onClick={next}>Next</Button>
                 </Stack.Item>

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as s from './styles'
@@ -25,6 +25,9 @@ class Stack extends React.Component {
 
   prev = () => {
     let index = this.state.index - 1
+    let max = this.props.items().length - 1
+
+    if (index < 0) index = max
     this.setState({ index: index < 0 ? 0 : index })
   }
 
@@ -35,11 +38,7 @@ class Stack extends React.Component {
 
     items = items(index, this.next, this.prev)
     items = items.map((item, i) => {
-      let visible = index === i
-      let anim = s.animHide
-
-      if (visible) anim = s.animShow
-      return React.cloneElement(item, {key: i, visible: visible, animation: anim})
+      return React.cloneElement(item, {key: i, visible: index === i})
     })
 
     return (
