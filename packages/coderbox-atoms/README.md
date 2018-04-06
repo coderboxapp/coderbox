@@ -7,7 +7,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 # Introduction
-`coderbox-atoms` is a collection of REACT components used to develop the application at [Coderbox](https://www.coderbox.me)
+`coderbox-atoms` is a collection of REACT components.
 
 # Installation
 
@@ -17,24 +17,22 @@ npm install @coderbox/atoms --save
 ```
 yarn add @coderbox/atoms
 ```
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia/superagent/wiki/SuperAgent-for-Webpack).
 
 # Demo
-[DEMO Page](https://coderboxapp.github.io/coderbox-atoms/)
-
-For code example check `.stories.js` files from each component.
+[Documentation](https://coderboxapp.github.io/coderbox/)
 
 # Components List
 
+- [x] Box
 - [x] Button
 - [x] Group
 - [x] Icon
-- [x] Image
-- [x] Box
-- [x] Title
-- [x] Subtitle
 - [x] Loader
+- [x] Stack
 - [x] Tag
+- [x] Text
+- [x] Title
+- [x] YesNo
 
 # Build
 

@@ -8,7 +8,7 @@ import { Button, Box } from '../index'
 
 let stories = storiesOf('atoms/Button', module)
 
-stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
+stories.add('simple usage', withDocs(docs.main, () => {
   return (
     <div>
       <Box color='success' inverted>
@@ -38,7 +38,7 @@ stories.add('simple usage', withTheme(themes.main, withDocs(docs.main, () => {
       </Box>
     </div>
   )
-})))
+}))
 
 stories.add('with different size', withTheme(themes.main, withDocs(docs.withSize, () => {
   return (

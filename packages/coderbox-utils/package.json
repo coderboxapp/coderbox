@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "del": "del",
+    "prebuild": "npm run clean",
     "prepare": "npm build",
     "clean": "del lib",
     "build": "babel src --out-dir lib",

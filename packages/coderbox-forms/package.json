@@ -1,7 +1,7 @@
 {
-  "name": "@coderbox/atoms",
+  "name": "@coderbox/forms",
   "version": "2.0.6",
-  "description": "A collection of React components.",
+  "description": "A collection of React components used to build forms.",
   "main": "lib/index.js",
   "scripts": {
     "del": "del",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/coderbox-atoms"
+    "url": "git+https://github.com/coderboxapp/coderbox/tree/master/packages/coderbox-forms"
   },
   "keywords": [
     "react"
@@ -21,15 +21,15 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@coderbox/hocs": "^2.0.6",
-    "@coderbox/themes": "^2.0.5",
+    "@coderbox/atoms": "^2.0.6",
     "@coderbox/utils": "^2.0.6",
+    "@coderbox/themes": "^2.0.5",
+    "@coderbox/hocs": "^2.0.6",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
     "polished": "^1.9.2",
     "react": "16.x",
     "react-dom": "16.x",
-    "recompose": "^0.25.0",
     "styled-components": "^3.2.5"
   }
 }
