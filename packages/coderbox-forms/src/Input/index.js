@@ -3,19 +3,35 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import * as s from './styles'
 
+/**
+ * **Input** is a field used to get a response from a user.
+ */
 class Input extends React.Component {
   static displayName = 'Input'
   static defaultProps = {
     type: 'text',
     placeholder: '',
-    size: 'normal'
+    size: 'normal',
+    onEnter: null,
+    onChange: null
   }
   static propTypes = {
+    /**
+     * A input can have different sizes. <br/>
+     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
+     **/
     size: PropTypes.string,
+    /** `onChange(event: SyntheticEvent, data: object)` */
     onChange: PropTypes.func,
+    /** `onEnter(event: SyntheticEvent, data: object)` */
     onEnter: PropTypes.func,
-    placeholder: PropTypes.string,
-    type: PropTypes.string
+    /**
+     * Input type. <br/>
+     * **Enum**: `text`, `email`, `password`, `etc..`
+     */
+    type: PropTypes.string,
+    /** A input can have a placeholder. */
+    placeholder: PropTypes.string
   }
 
   handleKeyDown = evt => {
@@ -53,4 +69,5 @@ class Input extends React.Component {
   }
 }
 
+/** @component */
 export default Input
