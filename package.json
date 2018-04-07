@@ -8,6 +8,8 @@
     "storybook-deploy": "storybook-to-ghpages"
   },
   "devDependencies": {
+    "@coderbox/hocs": "^2.0.6",
+    "@coderbox/themes": "^2.0.5",
     "@storybook/cli": "^3.4.0",
     "@storybook/react": "^3.2.4",
     "@storybook/storybook-deployer": "^2.0.0",

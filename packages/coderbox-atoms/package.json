@@ -21,8 +21,6 @@
   "author": "Ghiura Alexandru <ghalex@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@coderbox/hocs": "^2.0.6",
-    "@coderbox/themes": "^2.0.5",
     "@coderbox/utils": "^2.0.6",
     "classnames": "^2.2.5",
     "lodash": "^4.17.5",
