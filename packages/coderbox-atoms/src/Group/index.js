@@ -4,6 +4,10 @@ import cx from 'classnames'
 import { compact } from 'lodash'
 import { HGroup, VGroup } from './styles'
 
+/**
+ * Group is used to group other elements. <br/>
+ * **__Info__**: A group passes all props like `color`, `size`, `etc...` to it's children.
+ */
 class Group extends React.Component {
   static displayName = 'Group'
   static defaultProps = {
@@ -11,6 +15,7 @@ class Group extends React.Component {
   }
 
   static propTypes = {
+    /** A group can display it's children **vertical**. */
     vertical: PropTypes.bool
   }
 

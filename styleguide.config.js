@@ -1,7 +1,17 @@
 const path = require('path')
 
 module.exports = {
-  showUsage: true,
+  showUsage: false,
+  template: {
+    head: {
+      links: [
+        {
+          rel: 'stylesheet',
+          href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+        }
+      ]
+    }
+  },
   sections: [
     {
       name: 'Atoms',

@@ -27,7 +27,7 @@ theme.colors = {
   primaryLight: '#65b3e3',
   secondaryLight: '#f4754e',
   successLight: '#49e5ce',
-  dangerLight: '#e91e63',
+  dangerLight: '#ec5287',
   greyLight: '#cccccc'
 }
 
