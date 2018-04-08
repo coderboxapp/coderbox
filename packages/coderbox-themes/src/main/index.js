@@ -56,7 +56,7 @@ theme.components = {
   },
   input: {
     border: `2px solid #CCC`,
-    borderRadius: 0,
+    borderRadius: 3,
     boxShadow: 'none',
     height: '2.40em',
     focusBorder: `2px solid`,
@@ -64,7 +64,7 @@ theme.components = {
   },
   textarea: {
     border: `2px solid #CCC`,
-    borderRadius: 0,
+    borderRadius: 3,
     boxShadow: 'none',
     focusBorder: `2px solid ${theme.colors.primaryLight}`,
     focusBoxShadow: `none`

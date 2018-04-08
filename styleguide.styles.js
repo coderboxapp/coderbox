@@ -1,5 +1,6 @@
 const colors = {
-  primary: '#00d1b2',
+  primary: '#3273dc',
+  success: '#00d1b2',
   blue: '#00aefc',
   light: '#ebf1f3'
 }

@@ -39,7 +39,7 @@ class Button extends React.Component {
     /** Use static to disable hover */
     static: PropTypes.bool,
     /** A button can be disabled. */
-    disabled: PropTypes.disabled,
+    disabled: PropTypes.bool,
     /** A button can have an icon */
     icon: PropTypes.string,
     /** A button can show icon left or right */

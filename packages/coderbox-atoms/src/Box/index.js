@@ -29,7 +29,7 @@ class Box extends React.Component {
     padding: PropTypes.string,
     /** A box can have its colors inverted. */
     inverted: PropTypes.bool,
-    /** Set space between Box children */
+    /** Set space between Box children. **Ex.** '2px 0' */
     space: PropTypes.string,
     /** A box can be stacked. */
     stacked: PropTypes.bool

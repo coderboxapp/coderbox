@@ -8,7 +8,6 @@
     "docs-build": "npx styleguidist build"
   },
   "devDependencies": {
-    "@coderbox/themes": "^2.0.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

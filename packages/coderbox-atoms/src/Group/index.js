@@ -21,7 +21,7 @@ class Group extends React.Component {
 
   render () {
     const className = cx('group', this.props.className)
-    const { vertical, children, ...props } = this.props
+    const { vertical, children, fluid, ...props } = this.props
     const StyledGroup = vertical ? VGroup : HGroup
 
     const items = React.Children.map(
@@ -32,7 +32,7 @@ class Group extends React.Component {
     )
 
     return (
-      <StyledGroup {...props} className={className}>
+      <StyledGroup {...props} fluid={fluid} className={className}>
         {items}
       </StyledGroup>
     )
