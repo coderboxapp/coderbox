@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { color, px, isSize } from '@coderbox/utils'
-import { rgba, darken } from 'polished'
+import { rgba } from 'polished'
 
 export const Input = styled.div`
   display: flex;
@@ -31,7 +31,6 @@ export const Input = styled.div`
 
   & > input:focus {
     border: ${p => p.theme.components.input.focusBorder};
-    border-color: ${p => p.color ? darken(0.1, color(p)) : p.theme.colors.primary};
     box-shadow: ${p => p.theme.components.input.focusBoxShadow};
   }
 

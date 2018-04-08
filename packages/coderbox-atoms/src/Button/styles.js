@@ -68,5 +68,9 @@ export const Button = styled.div.attrs({
   &:not(:last-child) {
     margin: 0 0.25em 0 0;
   }
+
+  &:focus {
+    box-shadow: ${p => p.button.focusBoxShadow};
+  }
   
 `

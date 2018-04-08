@@ -1,3 +1,5 @@
+import { rgba } from 'polished'
+
 const theme = {}
 
 theme.fonts = {
@@ -24,6 +26,7 @@ theme.colors = {
   grey: '#808080',
   black: '#363636',
   white: 'white',
+  focus: '#209cee',
   primaryLight: '#65b3e3',
   secondaryLight: '#f4754e',
   successLight: '#49e5ce',
@@ -47,7 +50,8 @@ theme.components = {
     borderRadius: 3,
     color: '#363636',
     background: 'linear-gradient(#ffffff, #f6f7f8)',
-    hoverBackground: '#f6f7f8'
+    hoverBackground: '#f6f7f8',
+    focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
   tag: {
     border: '1px solid #888',
@@ -59,15 +63,15 @@ theme.components = {
     borderRadius: 3,
     boxShadow: 'none',
     height: '2.40em',
-    focusBorder: `2px solid`,
-    focusBoxShadow: `none`
+    focusBorder: `2px solid ${theme.colors.focus}`,
+    focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
   textarea: {
     border: `2px solid #CCC`,
     borderRadius: 3,
     boxShadow: 'none',
-    focusBorder: `2px solid ${theme.colors.primaryLight}`,
-    focusBoxShadow: `none`
+    focusBorder: `2px solid ${theme.colors.primary}`,
+    focusBoxShadow: `0 0 0 0.15em ${rgba(theme.colors.focus, 0.25)}`
   },
   checkbox: {
     border: '1px solid gray',

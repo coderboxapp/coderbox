@@ -20,7 +20,10 @@ module.exports = {
   sections: [
     {
       name: '1. Introduction',
-      content: 'readme.md'
+      sections: [{
+        name: '',
+        content: 'readme.md'
+      }]
     },
     {
       name: '2. Atoms',
