@@ -4,6 +4,9 @@ import cx from 'classnames'
 import { Icon, Button, Group } from '../index'
 import { StyledYesNo } from './styles'
 
+/**
+ * A **YesNo** containar can be used ask user to choose yes or no after he clicks a button.
+ **/
 class YesNo extends React.Component {
   state = {
     isOpen: false
@@ -16,9 +19,12 @@ class YesNo extends React.Component {
   }
 
   static propTypes = {
+    /** A yesno can be displayed to the left */
     left: PropTypes.bool,
     padding: PropTypes.string,
+    /** Called when user chooses yes */
     onYes: PropTypes.func,
+    /** Called when user chooses no */
     onNo: PropTypes.func
   }
 

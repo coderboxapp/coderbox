@@ -33,3 +33,22 @@ Group `Button` and `Button` with icon:
   </Group>
 </Box>
 ```
+
+Group `Tags`:
+
+```jsx
+<Box color='success' inverted>
+  <Group>
+    <Tag color='black'>npm</Tag>
+    <Tag color='primary'>v1.0.0</Tag>
+  </Group>
+  <Group>
+    <Tag color='black'>build</Tag>
+    <Tag color='success'>passed</Tag>
+  </Group>
+  <Group>
+    <Tag color='primary'>javascript</Tag>
+    <Tag color='greyLight' delete />
+  </Group>
+</Box>
+```
