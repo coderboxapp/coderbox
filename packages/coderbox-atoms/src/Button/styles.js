@@ -32,7 +32,7 @@ const isWithIcon = p => {
 }
 
 export const Button = styled.div.attrs({
-  button: p => ({...p.theme.components.button})
+  button: p => ({ ...p.theme.components.button })
 })`
   height: ${p => p.button.height};
   padding: ${p => p.button.padding};
@@ -53,9 +53,7 @@ export const Button = styled.div.attrs({
   user-select: none;
   text-decoration: none;
 
-  &:hover {
-    background: ${p => p.button.hoverBackground};
-  }
+  ${p => !p.static && css`&:hover { background: ${p.button.hoverBackground}; }`}
 
   ${isSize}
   ${isFluid}

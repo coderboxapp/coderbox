@@ -14,12 +14,25 @@ class Title extends React.Component {
     margin: undefined
   }
   static propTypes = {
+    /** Render title as `h2`, `h3`, `h4` */
     as: PropTypes.string,
+    /**
+     * A title can have different colors. <br/>
+     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
+     **/
     color: PropTypes.string,
+    /**
+     * A title can have different sizes. <br/>
+     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
+     **/
     size: PropTypes.string,
+    /** A title can have its font as thin */
     thin: PropTypes.bool,
+    /** A title can have its font as strong */
     strong: PropTypes.bool,
+    /** A title can be aligned. */
     textAlign: PropTypes.string,
+    /** Set custom margin to title */
     margin: PropTypes.string
   }
   render () {

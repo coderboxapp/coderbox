@@ -11,18 +11,39 @@ class Button extends React.Component {
     color: null,
     size: 'normal',
     loading: false,
+    disabled: false,
+    outlined: false,
+    fluid: false,
     icon: null,
     iconPosition: 'left',
     static: false
   }
 
   static propTypes = {
+    /**
+     * A button can have different colors. <br/>
+     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
+     **/
     color: PropTypes.string,
+    /**
+     * A button can have different sizes. <br/>
+     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
+     **/
     size: PropTypes.string,
+    /** A button can be shown as outlined. */
+    outlined: PropTypes.bool,
+    /** A button can show a loading indicator. */
     loading: PropTypes.bool,
+    /** A button can take the width of its container. */
+    fluid: PropTypes.bool,
+    /** Use static to disable hover */
+    static: PropTypes.bool,
+    /** A button can be disabled. */
+    disabled: PropTypes.disabled,
+    /** A button can have an icon */
     icon: PropTypes.string,
-    iconPosition: PropTypes.string,
-    static: PropTypes.bool
+    /** A button can show icon left or right */
+    iconPosition: PropTypes.string
   }
 
   render () {

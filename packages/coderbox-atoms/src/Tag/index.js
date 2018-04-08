@@ -14,9 +14,19 @@ class Tag extends React.Component {
   }
 
   static propTypes = {
+    /**
+     * A tag can have different colors. <br/>
+     * **Enum**: `primary`, `secondary`, `success`, `danger`, `white`, `black`, `grey`, `#FF0000`, ...
+     **/
     color: PropTypes.string,
+    /**
+     * A tag can have different sizes. <br/>
+     * **Enum**: `tiny`, `small`, `normal`, `medium`, `large`, `xlarge`, `huge`
+     **/
     size: PropTypes.string,
+    /** A tag can have an icon. */
     icon: PropTypes.string,
+    /** A tag can be rendered as delete icon. */
     delete: PropTypes.bool
   }
 
