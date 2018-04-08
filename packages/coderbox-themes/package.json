@@ -1,6 +1,6 @@
 {
   "name": "@coderbox/themes",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "description": "Themes to be used with coderbox components.",
   "main": "lib/index.js",
   "scripts": {
