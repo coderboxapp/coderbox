@@ -78,7 +78,6 @@ export const isCircular = p => {
 
 export const isColor = p => {
   if (!p.color) return
-  console.log('color', p.color)
   return css`
     color: ${p => textOnColor(color(p))};
     background: ${p => color(p)};

@@ -1,7 +1,12 @@
 const path = require('path')
+const { version } = require('./lerna.json')
+const { styles, theme } = require('./styleguide.styles')
 
 module.exports = {
+  title: `Zebbra ${version}`,
   showUsage: false,
+  styles,
+  theme,
   template: {
     head: {
       links: [
@@ -13,6 +18,10 @@ module.exports = {
     }
   },
   sections: [
+    {
+      name: '',
+      content: 'packages/readme.md'
+    },
     {
       name: 'Atoms',
       content: 'packages/coderbox-atoms/src/index.md',
