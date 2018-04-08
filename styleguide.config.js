@@ -50,7 +50,7 @@ module.exports = {
     }
   },
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
-    Logo: path.join(__dirname, 'styleguide/Logo')
+    Wrapper: path.join(__dirname, 'styleguide/components/ThemeWrapper'),
+    Logo: path.join(__dirname, 'styleguide/components/Logo')
   }
 }

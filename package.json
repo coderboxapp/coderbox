@@ -4,7 +4,8 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "publish": "lerna publish",
-    "docs": "npx styleguidist server"
+    "docs": "npx styleguidist server",
+    "docs-build": "npx styleguidist build"
   },
   "devDependencies": {
     "@coderbox/themes": "^2.0.5",
