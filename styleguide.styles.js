@@ -1,5 +1,16 @@
+const colors = {
+  primary: '#00d1b2',
+  blue: '#00aefc',
+  light: '#ebf1f3'
+}
+
 module.exports = {
   styles: {
+    ComponentsList: {
+      heading: {
+        fontWeight: '700 !important'
+      }
+    },
     Heading: {
       heading1: {
         display: 'block',
@@ -14,7 +25,7 @@ module.exports = {
           left: 0,
           width: '6rem',
           height: '4px',
-          backgroundColor: '#00aefc',
+          backgroundColor: colors.primary,
           borderRadius: '4px'
         },
         '& > a': {
@@ -24,7 +35,7 @@ module.exports = {
     },
     ReactComponent: {
       tabs: {
-        backgroundColor: '#ebf1f3',
+        backgroundColor: colors.light,
         padding: `0.5rem 1rem`,
         overflow: 'auto'
       },
@@ -46,11 +57,52 @@ module.exports = {
         marginBottom: '0.5rem',
         minWidth: '600px'
       }
+    },
+    StyleGuide: {
+      sidebar: {
+        border: 0,
+        '& li > a': {
+          color: `#fff !important`
+        }
+      },
+      logo: {
+        border: 0,
+        paddingBottom: 0,
+        '& .rsg-logo': {
+          display: 'block',
+          margin: '-0.5rem',
+          padding: '0.5rem',
+          transition: 'all 250ms ease',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+          fontSize: '24px',
+          cursor: 'pointer',
+          opacity: 0.8,
+          color: 'white'
+        },
+        '& .rsg-logo-name, & .rsg-logo-version': {
+          display: 'inline-block',
+          verticalAlign: 'middle',
+          pointerEvents: 'none'
+        },
+        '& .rsg-logo-name': {
+          fontWeight: 700
+        },
+        '& .rsg-logo-version': {
+          marginLeft: '0.25rem',
+          opacity: 0.5
+        }
+      }
     }
   },
   theme: {
+    sidebarWidth: 220,
     color: {
-      codeBackground: '#ebf1f3'
+      sidebarBackground: colors.primary,
+      codeBackground: colors.light
+    },
+    fontFamily: {
+      base: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+      monospace: 'Consolas, "Liberation Mono", Menlo, monospace'
     }
   }
 }

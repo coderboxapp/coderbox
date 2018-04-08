@@ -19,16 +19,16 @@ module.exports = {
   },
   sections: [
     {
-      name: '',
+      name: '1. Introduction',
       content: 'packages/readme.md'
     },
     {
-      name: 'Atoms',
+      name: '2. Atoms',
       content: 'packages/coderbox-atoms/src/index.md',
       components: 'packages/coderbox-atoms/src/[A-Z]*/index.js'
     },
     {
-      name: 'Forms',
+      name: '3. Forms',
       content: 'packages/coderbox-forms/src/index.md',
       components: 'packages/coderbox-forms/src/[A-Z]*/index.js'
     }
@@ -50,6 +50,7 @@ module.exports = {
     }
   },
   styleguideComponents: {
-    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper')
+    Wrapper: path.join(__dirname, 'styleguide/ThemeWrapper'),
+    Logo: path.join(__dirname, 'styleguide/Logo')
   }
 }
